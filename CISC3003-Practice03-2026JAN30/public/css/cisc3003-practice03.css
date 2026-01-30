@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background-color: #E8EAF6;
+    color: #333;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+a {
+    color: #00B0FF;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #F50057;
+    color: white;
+}
+
+img {
+    max-width: 100%; 
+    height: auto;
+}
+
+
+header {
+    color: white;
+    background-color: #1A237E;
+    margin: 0em 4em 0 4em;
+    padding-top: 0.625rem;
+}
+
+header h1 {
+    margin: 0.5em;
+}
+
+header p {
+    margin: 0 0.5em 1em 0.5em;
+    font-style: italic;
+}
+
+
+nav {
+    background-color: #3F51B5; 
+    padding: 0.625rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0.625rem;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1.25rem;
+}
+
+
+main {
+    background-color: white;
+    margin: 0em 4em; 
+    padding-bottom: 1.25rem;
+    overflow: hidden;
+    
+}
+
+
+main section {
+    border: 2px solid #C5CAE9; 
+    margin: 1.25rem;
+    padding: 0; 
+    width: 43.75rem;
+    max-width: 100%;
+}
+
+
+section h3 {
+    background-color: #7986CB;
+    color: white;
+    padding: 0.625rem;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+
+section figure {
+    margin: 0;
+}
+
+
+figcaption {
+    background-color: #C5CAE9;
+    padding: 0.625rem;
+    margin: 0;
+    font-style: italic;
+}
+
+figure {
+    margin: 0.625rem 1.25rem;
+}
+
+
+main section:first-of-type {
+    border: 2px solid #C5CAE9; 
+    margin: 1.25rem;
+    padding: 0; 
+    width: 43.75rem;
+    max-width: 100%;
+}
+
+
+#reviews div {
+    border-bottom: 2px solid #D3D3D3;
+    margin: 0.9375rem; 
+    padding-bottom: 0.625rem;
+}
+
+
+
+.byline {
+    color: #7986CB;
+    margin-bottom: 0.3125rem;
+}
+
+.byline time {
+    color: #FF80AB; 
+}
+
+
+footer {
+    color: white;
+    background-color: #1A237E;
+    margin: 0em 4em 2em 4em;
+    padding: 0.9375rem;
+}
+
+footer p {
+    margin-bottom: 0.625rem;
+}
