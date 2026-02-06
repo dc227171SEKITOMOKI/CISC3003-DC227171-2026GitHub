@@ -1,0 +1,147 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+/* general text formatting */
+
+h1, h2, h3, nav, footer {
+ font-family: Lobster, Cambria, "Times New Roman", serif;
+}
+body {
+   font-family: "Open Sans", Verdana, Arial, sans-serif;
+   font-size: 100%;
+   background-color: #E8EAF6; /* Body Background */
+}
+
+/* header and navigation */
+header, footer {
+  color: white;
+  background-color: #1A237E;
+  margin: 0em 4em 0.25em 4em;
+}
+header h1 { 
+  padding: 0.5rem 0 0 1.25rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+header p { 
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 0 0 0 1.25rem;
+}
+
+/* main article styling */
+main {
+   background-color: white;
+   margin: 1em 4em 1em 4em;
+   padding: 1em;
+}
+
+.form-wrapper {
+   margin-bottom: 1em;
+   padding: 0;
+   width: 100%;
+}
+
+/* Form Styling */
+legend { 
+  font-size: 1.35rem;
+  background-color: #7986CB;
+  color: #E8EAF6;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0 5px 10px;
+  box-sizing: border-box;
+}
+
+fieldset {
+   margin: 0;
+   padding: 0;
+   background-color: #C5CAE9; /* Main Form Background */
+   width: 100%;
+   border: none;
+}
+
+/* Layout Utilities */
+.form-content {
+    padding: 20px;
+}
+
+.layout-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Space between rows */
+}
+
+.layout-table td {
+    vertical-align: top;
+}
+
+.full-width {
+    width: 98%;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Column Spacing */
+.col-left {
+    width: 50%;
+    padding-right: 15px;
+}
+
+.col-right {
+    width: 50%;
+    padding-left: 15px;
+}
+
+/* Inner groupings (Copyright, Date box) */
+.inner-box {
+    border: 1px solid #9FA8DA;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparency or just inherit */
+}
+
+.box-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.spacer {
+    margin-top: 15px;
+}
+
+/* License Row */
+.license-row {
+    background-color: #9FA8DA; /* Slightly darker bar for license */
+    padding: 10px;
+    color: black;
+}
+
+   
+/* Footer / Button Area */
+.form-footer {
+    background-color: #9FA8DA; /* Bottom Bar Color */
+    padding: 15px 20px;
+    border-top: 1px solid #7986CB;
+}
+
+/* Buttons */
+.rounded {
+    background-color: #E91E63; /* Pink/Red Color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.rounded:hover {
+    background-color: #C2185B;
+}
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)https://ummoodle.um.edu.mo/pluginfile.php/1691614/mod_page/content/7/cisc3003-practice04.html?time=1770336308175 -->
+
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>CISC3003: Practice 04</title>
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/cisc3003-practice04.css">
+</head>
+<body>
+<header>
+     <h1>Share Your Travels</h1>
+     <p>let us know where you've been</p>
+</header>
+<main>
+   <div class="form-wrapper">
+      <form action="#" method="post">
+         <fieldset>
+            <legend>Photo Details</legend>
+            
+            <div class="form-content">
+               <table class="layout-table">
+                  <tr>
+                     <td colspan="2">
+                        <label for="title">Title</label><br>
+                        <input type="text" name="title" id="title" class="full-width" placeholder="Give your photo a descriptive name">
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td colspan="2">
+                        <label for="description">Description</label><br>
+                        <textarea name="description" id="description" rows="5" cols="61" class="full-width" placeholder="Adding a rich description will help with search results"></textarea>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td class="col-left">
+                        <label for="continent">Continent</label><br>
+                        <select name="continent" id="continent" class="full-width">
+                           <option>Choose continent</option>
+                           <option value="Africa">Africa</option>
+                           <option value="Asia">Asia</option>
+                           <option value="Europe">Europe</option>
+                           <option value="North America">North America</option>
+                           <option value="South America">South America</option>
+                        </select>
+                        
+                        <p class="spacer"></p>
+
+                        <label for="country">Country</label><br>
+                        <select name="country" id="country" class="full-width">
+                           <option>Choose country</option>
+                           <option value="Canada">Canada</option>
+                           <option value="Mexico">Mexico</option>
+                           <option value="United States">United States</option>
+                        </select>
+
+                        <p class="spacer"></p>
+
+                        <label for="city">City</label><br>
+                        <input type="text" name="city" id="city" class="full-width">
+                     </td>
+
+                     <td class="col-right">
+                        <div class="inner-box">
+                           <p class="box-label">Copyright?</p>
+                           <label><input type="radio" name="copyright" value="all" checked> All rights reserved</label><br>
+                           <label><input type="radio" name="copyright" value="cc"> Creative Commons</label>
+                        </div>
+
+                        <div class="inner-box">
+                           <p class="box-label">Creative Commons Types</p>
+                           <label><input type="checkbox" name="cc[]" value="attr"> Attribution</label><br>
+                           <label><input type="checkbox" name="cc[]" value="nc"> Noncommercial</label><br>
+                           <label><input type="checkbox" name="cc[]" value="nd"> No Derivative Works</label>
+                        </div>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td colspan="2" class="license-row">
+                        <label>I accept the software license <input type="checkbox" name="license"></label>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td class="col-left">
+                        <label for="rate">Rate this photo:</label><br>
+                        <input type="number" name="rate" id="rate" min="1" max="5">
+                        
+                        <p class="spacer"></p>
+
+                        <label for="color">Color Collection:</label><br>
+                        <input type="color" name="color" id="color">
+                     </td>
+                     <td class="col-right">
+                        <div class="inner-box">
+                           <label for="date">Date Taken:</label><br>
+                           <input type="text" name="date" id="date" class="full-width-input" placeholder="mm / dd / yyyy" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"><br><br>
+                           
+                           <label for="time">Time Taken:</label><br>
+                           <input type="text" name="time" id="time" class="full-width-input" placeholder="-- : --  --" onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'">
+                        </div>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+
+            <div class="form-footer">
+               <input type="submit" value="Submit" class="rounded">
+               <input type="reset" value="Clear Form" class="rounded">
+            </div>
+
+         </fieldset>
+      </form>
+   </div>
+</main>
+</body>
+</html>
