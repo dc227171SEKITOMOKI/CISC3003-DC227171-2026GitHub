@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* ===== Basic Reset & Typography ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f8fc;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+.logo { margin: 0; padding-top: 10px; }
+
+nav { margin: 10px 0 15px 0; padding-bottom: 10px; }
+nav a { color: white; text-decoration: none; margin-right: 15px; font-weight: bold; }
+nav a:hover, nav a.active { text-decoration: underline; color: #93c5fd; }
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    height: 90vh;
+
+    background-image: url("../images/me.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+	padding-top: 12vh;
+
+    text-align: center;
+    color: white;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text { position: relative; z-index: 1; }
+.hero-text h2 { font-size: 3.5rem; margin-bottom: 10px; }
+.hero-text span { color: #93c5fd; }
+.hero-text p { font-size: 1.4rem; }
+
+/* ===== Section Styles ===== */
+.section { padding: 60px 20px; text-align: center; }
+h2 { color: #1e3a8a; margin-bottom: 30px; }
+
+/* About Me Content */
+#about p {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-gallery img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
