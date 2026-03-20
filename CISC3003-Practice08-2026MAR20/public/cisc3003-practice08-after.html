@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CISC3003 Practice 08</title>
+
+<link href="./CISC3003%20Practice%2008_files/css" rel="stylesheet" type="text/css">
+<link href="./CISC3003%20Practice%2008_files/css(1)" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/styles.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+    /* Add styles for a test button to easily start the test */
+    #runTestBtn {
+        background-color: #2E7D32;
+        color: white;
+        border: 0;
+        padding: 10px 15px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%;
+    }
+    #runTestBtn:hover {
+        background-color: #1B5E20;
+    }
+</style>
+
+</head>    
+<body class="tiled">
+<header>
+    <h1>Art Filters</h1>
+</header>
+<main>
+    <div id="sliderBox">
+        <form>
+           <label>Opacity: </label><p><input type="range" id="sliderOpacity" min="0" max="100" value="100" class="sliders"> <span id="numOpacity">100</span>%</p>
+           <p><label>Saturation: </label><input type="range" id="sliderSaturation" min="1" max="300" value="100" class="sliders"> <span id="numSaturation">100</span>%</p>
+           <p><label>Brightness: </label><input type="range" id="sliderBrightness" min="0" max="300" value="100" class="sliders"> <span id="numBrightness">100</span>%</p>
+           <p><label>Hue Rotate: </label><input type="range" id="sliderHue" min="0" max="360" value="0" class="sliders"> <span id="numHue">0</span>deg</p>
+           <p><label>Grayscale: </label><input type="range" id="sliderGray" min="0" max="100" value="0" class="sliders"> <span id="numGray">0</span>%</p>
+           <p><label>Blur: </label><input type="range" id="sliderBlur" min="0" max="10" value="0" class="sliders"> <span id="numBlur">0</span>px</p>
+           <p><button id="resetFilters">Reset</button> </p>
+        </form>
+        
+        <button id="runTestBtn">▶ Run Test Driver</button>
+    </div>
+    <figure id="imgManipulated">
+        <img src="images/medium/painting1.jpg"> 
+        <figcaption>
+            <em>Still Life with Flowers in a Glass Vase</em> <br>
+            Jan Davidsz. de Heem, 1650 - 1683
+        </figcaption>
+    </figure>   
+    <div id="thumbBox">
+        <div><img src="images/small/painting1.jpg" alt="Still Life with Flowers in a Glass Vase" title="Jan Davidsz. de Heem, 1650 - 1683"></div>
+        <div><img src="images/small/painting2.jpg" alt="Portrait of Alida Christina Assink" title="Jan Adam Kruseman, 1833"></div>
+        <div><img src="images/small/painting3.jpg" alt="Self-portrait" title="Vincent van Gogh, 1887"></div>
+        <div><img src="images/small/painting4.jpg" alt="William II, Prince of Orange, and his Bride, Mary Stuart" title="Anthony van Dyck, 1641"></div>
+        <div><img src="images/small/painting5.jpg" alt="Milkmaid" title="Johannes Vermeer, c. 1660"></div>
+    </div>
+</main>
+<script>
+$(document).ready(function() {
+    
+    // --- Original logic: Requirement #2 & #3 ---
+    $('#thumbBox img').on('click', function() {
+        let smallSrc = $(this).attr('src');
+        let altText = $(this).attr('alt');
+        let titleText = $(this).attr('title');
+        let mediumSrc = smallSrc.replace('small', 'medium');
+        
+        $('#imgManipulated img').attr('src', mediumSrc);
+        $('#imgManipulated figcaption').html('<em>' + altText + '</em> <br>' + titleText);
+    });
+
+    // --- Original logic: Requirement #4 ---
+    $('.sliders').on('input', function() {
+        let opacity = $('#sliderOpacity').val();
+        let saturation = $('#sliderSaturation').val();
+        let brightness = $('#sliderBrightness').val();
+        let hue = $('#sliderHue').val();
+        let grayscale = $('#sliderGray').val();
+        let blur = $('#sliderBlur').val();
+
+        $('#numOpacity').text(opacity);
+        $('#numSaturation').text(saturation);
+        $('#numBrightness').text(brightness);
+        $('#numHue').text(hue);
+        $('#numGray').text(grayscale);
+        $('#numBlur').text(blur);
+
+        let filterString = 
+            'opacity(' + opacity + '%) ' +
+            'saturate(' + saturation + '%) ' +
+            'brightness(' + brightness + '%) ' +
+            'hue-rotate(' + hue + 'deg) ' +
+            'grayscale(' + grayscale + '%) ' +
+            'blur(' + blur + 'px)';
+
+        $('#imgManipulated img').css({
+            'filter': filterString,
+            '-webkit-filter': filterString
+        });
+    });
+
+    // --- Original logic: Requirement #1 ---
+    $('#resetFilters').on('click', function(e) {
+        e.preventDefault(); 
+        $('#sliderOpacity').val(100);
+        $('#sliderSaturation').val(100);
+        $('#sliderBrightness').val(100);
+        $('#sliderHue').val(0);
+        $('#sliderGray').val(0);
+        $('#sliderBlur').val(0);
+
+        $('#numOpacity').text('100');
+        $('#numSaturation').text('100');
+        $('#numBrightness').text('100');
+        $('#numHue').text('0');
+        $('#numGray').text('0');
+        $('#numBlur').text('0');
+
+        $('#imgManipulated img').css({
+            'filter': 'none',
+            '-webkit-filter': 'none'
+        });
+    });
+
+    // ==========================================
+    // TEST DRIVER LOGIC
+    // ==========================================
+    $('#runTestBtn').on('click', function() {
+        // Disable the test button to prevent multiple clicks
+        $(this).prop('disabled', true).text('Testing in progress...');
+        
+        let delay = 0;
+        const step = 1000; // 1 second interval for each step
+
+        // 1. Test Opacity
+        setTimeout(() => {
+            // Use .val(number) to change the slider, and notify the event listener to execute filter update via .trigger('input')
+            $('#sliderOpacity').val(50).trigger('input');
+        }, delay += step);
+
+        // 2. Test Saturation
+        setTimeout(() => {
+            $('#sliderSaturation').val(250).trigger('input');
+        }, delay += step);
+
+        // 3. Test Brightness
+        setTimeout(() => {
+            $('#sliderBrightness').val(150).trigger('input');
+        }, delay += step);
+
+        // 4. Test Hue Rotate
+        setTimeout(() => {
+            $('#sliderHue').val(180).trigger('input');
+        }, delay += step);
+
+        // 5. Test Grayscale
+        setTimeout(() => {
+            $('#sliderGray').val(80).trigger('input');
+        }, delay += step);
+
+        // 6. Test Blur
+        setTimeout(() => {
+            $('#sliderBlur').val(5).trigger('input');
+        }, delay += step);
+
+        // 7. Test switching image (click the third image, Van Gogh's self-portrait)
+        setTimeout(() => {
+            $('#thumbBox div:nth-child(3) img').trigger('click');
+        }, delay += step);
+
+        // 8. Test reset function
+        setTimeout(() => {
+            $('#resetFilters').trigger('click');
+            
+            // Restore button state
+            $('#runTestBtn').prop('disabled', false).text('▶ Run Test Driver');
+            alert('Test Driver Completed!');
+        }, delay += step + 500);
+    });
+
+});
+</script>    
+   
+</body>
+</html>
