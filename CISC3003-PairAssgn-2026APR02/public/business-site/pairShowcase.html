@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Showcase - JS Web Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pairShowcase.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-top">
+                <h1>JS Web Studio</h1>
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="nav-menu">
+                <a href="cisc3003-PairAssgn.html">Home</a>
+                <a href="pairProfile.html">Profile</a>
+                <a href="pairSummary.html">Summary</a>
+                <a href="pairShowcase.html"  class="active">Showcase</a>
+                <a href="pairQualification.html">Qualification</a>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h2>Our Showcase</h2>
+            <p>Explore our recent digital projects and the business offers we provide.</p>
+        </section>
+        
+        <section class="content">
+            <h2>Our Portfolio Projects</h2>
+            
+            <div class="project-item">
+                <h3>1. Easybank Landing Page</h3>
+                <img src="../images/demo1-placeholder.png" alt="Easybank Project Demo" class="demo-img">
+                <p>A modern, responsive landing page for a digital bank. This project demonstrates our ability to create clean UI/UX designs featuring precise CSS grid and flexbox layouts, adhering strictly to a mobile-first approach.</p>
+                <a href="pair-project-demo01.html" class="btn-link" target="_blank">View Project Demo 01</a>
+            </div>
+            
+            <hr>
+            
+            <div class="project-item">
+                <h3>2. Wealthome Real Estate</h3>
+                <img src="../images/demo2-placeholder.png" alt="Wealthome Portal Demo" class="demo-img">
+                <p>A comprehensive real estate property platform allowing users to find places to rent, buy, or sell. The site features dynamic property listing cards, advanced search form UI, and a highly accessible semantic structure.</p>
+                <a href="pair-project-demo02.html" class="btn-link" target="_blank">View Project Demo 02</a>
+            </div>
+            
+            <hr>
+            
+            <div class="project-item">
+                <h3>3. Crispy - Chicken Burgers</h3>
+                <img src="../images/demo3-placeholder.png" alt="Crispy Restaurant Demo" class="demo-img">
+                <p>A vibrant restaurant website designed to showcase popular food menus and customer stories. It includes a fully structured table reservation form and engaging grid lists for optimal user experience.</p>
+                <a href="pair-project-demo03.html" class="btn-link" target="_blank">View Project Demo 03</a>
+            </div>
+        </section>
+        
+        <aside class="sidebar">
+            <h2>Our Accomplishments</h2>
+            <ul>
+                <li>Successfully built multi-page responsive websites.</li>
+                <li>Mastered external CSS architectures for consistent styling.</li>
+                <li>Implemented perfect mobile-to-desktop grid transitions.</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>Our Business Offers</h2>
+            <ul>
+                <li>Custom Web Design & Development</li>
+                <li>Mobile-First UI/UX Optimization</li>
+                <li>Website Maintenance & Bug Fixing</li>
+                <li>Front-End Code Refactoring</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>Personal Portfolios</h2>
+            <p>Want to know more about us individually? Check out our personal portfolio websites below:</p>
+            <a href="../dc227171-portfolio-site/cisc3003-dc227171-home.html">Tomoki's Portfolio &rarr;</a><br>
+            <a href="../dc226973-portfolio-site/cisc3003-dc226973-home.html">Joaquin's Portfolio &rarr;</a>
+        </aside>
+        
+        <footer>
+            <p>CISC3003 Web Programming - 2026: Pair Name -> DC227171 + SEKI TOMOKI | DC226973 + Chen Joaquin Antonio</p>
+        </footer>
+    </main>
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active-menu');
+            hamburgerBtn.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

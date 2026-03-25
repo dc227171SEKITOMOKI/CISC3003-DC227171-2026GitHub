@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary - JS Web Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pairSummary.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-top">
+                <h1>JS Web Studio</h1>
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="nav-menu">
+                <a href="cisc3003-PairAssgn.html">Home</a>
+                <a href="pairProfile.html">Profile</a>
+                <a href="pairSummary.html" class="active">Summary</a>
+                <a href="pairShowcase.html">Showcase</a>
+                <a href="pairQualification.html">Qualification</a>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h2>Business Summary</h2>
+            <p>Our strategic goals, commitments to our clients, and our vision for the future.</p>
+        </section>
+        
+        <section class="content">
+            <h2>Our Business Goals</h2>
+            <p>Our primary business goal for this year is to solidify our foundation in full-stack web development and establish a strong client base. We aim to master HTML5, CSS3, and modern JavaScript to deploy dynamic, responsive, and highly functional websites for local and international stakeholders.</p>
+            
+            <hr>
+            <h2>Our Future Directions</h2>
+            <p>Reflecting on our journey, we plan to push ourselves further into complex frontend frameworks like React and Vue.js. In the long term, we intend to expand our freelance business into a full-scale digital agency, offering complete UI/UX design, database architecture, and cross-platform mobile development.</p>
+        </section>
+        
+        <aside class="sidebar">
+            <h2>Our Professional Commitments</h2>
+            <ul>
+                <li><strong>Quality Code:</strong> Adhering to strict semantic HTML and W3C standards.</li>
+                <li><strong>Responsive Design:</strong> Guaranteeing flawless performance on mobile, tablet, and desktop devices.</li>
+                <li><strong>Timely Delivery:</strong> Meeting project deadlines with clear communication throughout the process.</li>
+            </ul>
+            
+            <hr>
+            <h2>Personal Portfolios</h2>
+            <p>Want to know more about us individually? Check out our personal portfolio websites below:</p>
+            <a href="../dc227171-portfolio-site/cisc3003-dc227171-home.html">Tomoki's Portfolio &rarr;</a><br>
+            <a href="../dc226973-portfolio-site/cisc3003-dc226973-home.html">Joaquin's Portfolio &rarr;</a>
+        </aside>
+        
+        <footer>
+            <p>CISC3003 Web Programming - 2026: Pair Name -> DC227171 + SEKI TOMOKI | DC226973 + Chen Joaquin Antonio</p>
+        </footer>
+    </main>
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active-menu');
+            hamburgerBtn.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

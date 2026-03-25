@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - JS Web Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cisc3003-PairAssgn.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-top">
+                <h1>JS Web Studio</h1>
+                
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            
+            <nav id="nav-menu">
+                <a href="cisc3003-PairAssgn.html"  class="active">Home</a>
+                <a href="pairProfile.html">Profile</a>
+                <a href="pairSummary.html">Summary</a>
+                <a href="pairShowcase.html">Showcase</a>
+                <a href="pairQualification.html">Qualification</a>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h2>Welcome to JS Web Studio</h2>
+            <p>We are a freelance web design duo committed to building clean, responsive, and modern websites for your business needs.</p>
+        </section>
+        
+        <section class="content">
+            <h2>About Us</h2>
+            <p>Welcome to our professional business site. We are undergraduate students from the University of Macau, majoring in Computer Science, and we have combined our skills to provide excellent web design services.</p>
+            <hr>
+            
+            <h3>Tomoki Seki</h3>
+            <img src="../images/tomoki-placeholder.jpg" alt="Photo of Tomoki Seki" class="profile-img">
+            <p>I am a relatively introverted person who enjoys focusing deeply on technical logic, programming, and web development. I specialize in HTML, CSS, and ensuring robust code architecture.</p>
+            
+            <br>
+            <h3>Joaquin Antonio Chen</h3>
+            <img src="../images/joaquin-placeholder.jpg" alt="Photo of Joaquin Antonio Chen" class="profile-img">
+            <p>I am a passionate web developer with a keen eye for user interface design and modern web layouts. Together with Tomoki, we merge solid engineering with engaging interfaces.</p>
+        </section>
+        
+        <aside class="sidebar">
+            <h2>Personal Portfolios</h2>
+            <p>Want to know more about us individually? Check out our personal portfolio websites below:</p>
+            <a href="../dc227171-portfolio-site/cisc3003-dc227171-home.html">Tomoki's Portfolio &rarr;</a><br>
+            <a href="../dc226973-portfolio-site/cisc3003-dc226973-home.html">Joaquin's Portfolio &rarr;</a>
+        </aside>
+        
+        <footer>
+            <p>CISC3003 Web Programming - 2026: Pair Name -> DC227171 + SEKI TOMOKI | DC226973 + Chen Joaquin Antonio</p>
+        </footer>
+    </main>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active-menu');
+            hamburgerBtn.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

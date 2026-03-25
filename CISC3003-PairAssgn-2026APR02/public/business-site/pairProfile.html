@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - JS Web Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pairProfile.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-top">
+                <h1>JS Web Studio</h1>
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="nav-menu">
+                <a href="cisc3003-PairAssgn.html">Home</a>
+                <a href="pairProfile.html"  class="active">Profile</a>
+                <a href="pairSummary.html">Summary</a>
+                <a href="pairShowcase.html">Showcase</a>
+                <a href="pairQualification.html">Qualification</a>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h2>Our Business Profile</h2>
+            <p>Discover what drives our team, our aspirations, and how we approach our work.</p>
+        </section>
+        
+        <section class="content">
+            <h2>Our Values and Beliefs</h2>
+            <p>We firmly believe that honesty, responsibility, and teamwork are the cornerstones of successful business. We write clean, reliable code and take full responsibility for the digital products we deliver. Continuous learning is also vital to us, as technology changes rapidly.</p>
+            
+            <hr>
+            <h2>Our Career Aspirations</h2>
+            <p>As a team, our aspiration is to establish a well-known technical studio that creates creative platforms and software solutions. We are inspired by innovative tech companies like Bilibili, and we aim to build platforms that foster communication, culture, and shared knowledge.</p>
+            
+            <hr>
+            <h2>Our Interests and Hobbies</h2>
+            <p>Balancing work and life is important to our team. Outside of coding, we enjoy staying active through sports like badminton and fitness training. We also love exploring new foods and experiencing different cultures, which fuels our creativity.</p>
+        </section>
+        
+        <aside class="sidebar">
+            <h2>Our Blog Posts</h2>
+            <h3>The Mobile-First Approach</h3>
+            <p>In our latest post, we discuss how designing for mobile screens first improves usability and site speed.</p>
+            <a href="#">Read More</a>
+            
+            <br><br>
+            <h3>Balancing Study & Freelancing</h3>
+            <p>How we manage our time as CS students while delivering quality web projects.</p>
+            <a href="#">Read More</a>
+            
+            <hr>
+            <h2>Our Contact</h2>
+            <p><strong>Email:</strong> <br> dc22697.um.edu.mo | dc22717.um.edu.mo</p>
+            <p><strong>Phone:</strong> <br> +853 65808552 | +86 18559182868</p>
+            <p><strong>Location:</strong> University of Macau, Macau</p>
+            
+            <h2>Personal Portfolios</h2>
+            <p>Want to know more about us individually? Check out our personal portfolio websites below:</p>
+            <a href="../dc227171-portfolio-site/cisc3003-dc227171-home.html">Tomoki's Portfolio &rarr;</a><br>
+            <a href="../dc226973-portfolio-site/cisc3003-dc226973-home.html">Joaquin's Portfolio &rarr;</a>
+        </aside>
+        
+        <footer>
+            <p>CISC3003 Web Programming - 2026: Pair Name -> DC227171 + SEKI TOMOKI | DC226973 + Chen Joaquin Antonio</p>
+        </footer>
+    </main>
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active-menu');
+            hamburgerBtn.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

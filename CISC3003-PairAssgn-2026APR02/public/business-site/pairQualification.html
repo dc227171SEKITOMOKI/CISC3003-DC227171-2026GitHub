@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qualification - JS Web Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pairQualification.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-top">
+                <h1>JS Web Studio</h1>
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="nav-menu">
+                <a href="cisc3003-PairAssgn.html">Home</a>
+                <a href="pairProfile.html">Profile</a>
+                <a href="pairSummary.html">Summary</a>
+                <a href="pairShowcase.html">Showcase</a>
+                <a href="pairQualification.html"  class="active">Qualification</a>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h2>Our Qualifications</h2>
+            <p>Backed by strong academic foundations and practical freelance experience.</p>
+        </section>
+        
+        <section class="content">
+            <h2>Our Work Experience</h2>
+            <div class="qual-box">
+                <h3>JS Web Studio - Co-Founders</h3>
+                <p><em>2026 - Present</em></p>
+                <p>Started a self-employed freelance web design partnership. Responsible for client communication, full-cycle web design, and delivering responsive cross-platform code.</p>
+            </div>
+            <br>
+            <div class="qual-box">
+                <h3>Web Development Assistants (Part-time)</h3>
+                <p><em>Summer 2025</em></p>
+                <p>Assisted in updating digital content, fixing broken semantic links, and optimizing images for faster page loading speeds for university-affiliated platforms.</p>
+            </div>
+            
+            <hr>
+            
+            <h2>Our History</h2>
+            <p>Our journey began at the University of Macau (UM), where we both major in Computer Science. Discovering a shared passion for transforming complex ideas into clean, functional code, we decided to team up. We merged our distinct strengths—robust backend logic and modern front-end aesthetics—to form JS Web Studio.</p>
+        </section>
+        
+        <aside class="sidebar">
+            <h2>Our Awards</h2>
+            <ul>
+                <li><strong>Dean's List:</strong> Faculty of Science and Technology (2024)</li>
+                <li><strong>UM Scholarship:</strong> Awarded for academic excellence (2023)</li>
+                <li><strong>Hackathon Finalists:</strong> Campus App Development Challenge</li>
+            </ul>
+            
+            <hr>
+            
+            <h2>Our Services</h2>
+            <p>We provide full-stack consulting, wireframing, semantic HTML structuring, and advanced CSS styling. Need a formal business quote?</p>
+            <a href="pairProfile.html" class="btn-link">Contact Us Today</a>
+            
+            <hr>
+            <h2>Personal Portfolios</h2>
+            <p>Want to know more about us individually? Check out our personal portfolio websites below:</p>
+            <a href="../dc227171-portfolio-site/cisc3003-dc227171-home.html">Tomoki's Portfolio &rarr;</a><br>
+            <a href="../dc226973-portfolio-site/cisc3003-dc226973-home.html">Joaquin's Portfolio &rarr;</a>
+        </aside>
+        
+        <footer>
+            <p>CISC3003 Web Programming - 2026: Pair Name -> DC227171 + SEKI TOMOKI | DC226973 + Chen Joaquin Antonio</p>
+        </footer>
+    </main>
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active-menu');
+            hamburgerBtn.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

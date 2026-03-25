@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+/* ===== basic settings ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f8fc;
+    color: #333;
+}
+
+/* container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #1e3a8a; /* dark blue */
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Home Hero ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+
+    background-image: url("../images/me.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+	padding-top: 12vh;
+
+    text-align: center;
+    color: white;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem; 
+    margin-bottom: 10px;
+}
+
+.hero-text span {
+    color: #93c5fd;
+}
+
+.hero-text p {
+    font-size: 1.4rem; 
+}
+
+/* ===== Title ===== */
+h2, h3 {
+    color: #1e3a8a; /* dark blue */
+}
+.hero h2,
+.hero p {
+    color: white;
+}
+
+/* ===== Career Section Layout ===== */
+.career-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.career-left {
+    flex: 1;
+    text-align: center;
+}
+
+.career-left img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.career-right {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ===== Hobbies Grid ===== */
+.hobby-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* small screen automatically wraps lines */
+    margin-top: 40px;
+}
+
+.hobby-item {
+    width: 260px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /* trim off the redundant pictures */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* title */
+.hobby-item h3 {
+    margin: 0;
+    padding: 15px;
+    background-color: #1e3a8a; /* dark blue */
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* area of image */
+.hobby-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===== general Section ===== */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section img {
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#about p,
+#values p,
+#career p,
+#blog p {
+    text-align: left;
+}
+
+/* blue background section */
+.section.blue {
+    background-color: #e0ecff;
+}
+
+/* ===== Blog ===== */
+.blog-post {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
