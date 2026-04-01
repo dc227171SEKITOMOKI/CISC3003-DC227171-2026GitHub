@@ -1,0 +1,170 @@
+body {
+    background-color: #ECEFF1;
+}
+
+/* Header Adjustments */
+header.mdl-layout__header {
+    background-color: #607D8B; 
+}
+.mdl-layout-title {
+    font-size: 28px;
+    color: white;
+    font-weight: 400;
+}
+.mdl-layout-title span {
+    color: #ff6e40;
+}
+
+/* Sidebar / Drawer styling */
+.custom-drawer {
+    border-right: none;
+    background-color: #37474F;
+}
+.profile {
+    background-color: #263238;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px 20px 10px;
+    color: white;
+}
+.profile h2 {
+    margin: 15px 0 5px 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+.profile span {
+   font-size: 13px;   
+   color: #CFD8DC;
+}
+.avatar {
+    width: 96px;
+    height: 96px;  
+    border-radius: 50%;
+    display: block;
+}
+
+/* Sidebar Nav Links */
+.custom-nav .mdl-navigation__link {
+    color: #B0BEC5 !important;
+}
+.custom-nav .mdl-navigation__link:hover {
+    background-color: #263238 !important;
+}
+.custom-nav .mdl-navigation__link .material-icons {
+    margin-right: 15px;
+    color: #90A4AE;
+}
+
+/* Main Content Area */
+.mdl-layout__content {
+    background-color: #F5F5F5;
+}
+
+.page-content {
+    margin: 0;
+    width: 100%;
+}
+
+.page-header {
+    background-color: #90A4AE;
+    padding: 20px 40px;
+    margin: 0;
+}
+
+.page-header h2 {
+    margin: 0 0 5px 0; 
+    font-size: 20px;
+    color: #212121;
+}
+
+.page-header p {
+    margin: 0;
+    color: #37474F;
+    font-size: 14px;
+}
+
+
+section.mdl-grid {
+    max-width: 1200px;
+    margin: 20px auto; 
+}
+
+/* Cards General */
+.mdl-card {
+    width: 100%;
+    height: 100%;
+    min-height: auto;
+}
+
+.mdl-card__supporting-text {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* "My Orders" Card */
+.card-my-orders .mdl-card__title {
+    background-color: #673AB7; /* Purple */
+    color: white;
+}
+.order-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.order-links li {
+    padding: 8px 0;
+}
+.order-links a {
+    color: #FF9800;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* "Selected Order" Card */
+.card-selected-order .mdl-card__title {
+    background-color: #FF9800; /* Orange */
+    color: black;
+}
+.card-selected-order .mdl-card__title-text {
+    color: black;
+}
+.customer-info {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto;
+}
+.mdl-data-table {
+    width: 100%;
+    border: 1px solid #E0E0E0;
+    box-shadow: none;
+}
+.mdl-data-table img {
+    height: 65px; 
+    width: auto;
+    display: block;
+}
+
+/* Totals Row Styling */
+.totals td, .grandtotals td {
+    text-align: right;
+}
+.totals td:first-child, .grandtotals td:first-child {
+    text-align: right;
+    padding-right: 20px;
+}
+.totals {
+    font-style: italic; 
+    color: #555;
+}
+.grandtotals {
+    font-weight: 700; 
+    color: #6200EA; /* Deep Purple */
+}
