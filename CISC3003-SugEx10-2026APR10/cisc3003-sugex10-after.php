@@ -1,10 +1,7 @@
 <?php
 include 'includes/book-utilities.inc.php';
-
 $customers = readCustomers('data/customers.txt');
-
 $selectedCustomerId = isset($_GET['customer_id']) ? $_GET['customer_id'] : null;
-
 $selectedCustomer = null;
 if ($selectedCustomerId && isset($customers[$selectedCustomerId])) {
     $selectedCustomer = $customers[$selectedCustomerId];

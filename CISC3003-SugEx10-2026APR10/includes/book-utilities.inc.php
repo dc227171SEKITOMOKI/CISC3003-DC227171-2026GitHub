@@ -1,7 +1,4 @@
 <?php
-// Developer: SEKI TOMOKI (ID: dc227171)
-
-
 function readCustomers($filename) {
     $customers = array();
     
@@ -57,4 +54,3 @@ function readOrders($customer_id, $filename) {
     }
     return $orders;
 }
-?>
