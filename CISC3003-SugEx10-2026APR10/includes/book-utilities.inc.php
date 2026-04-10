@@ -54,3 +54,4 @@ function readOrders($customer_id, $filename) {
     }
     return $orders;
 }
+?>
