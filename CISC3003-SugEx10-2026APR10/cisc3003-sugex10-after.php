@@ -13,8 +13,8 @@ if ($selectedCustomerId && isset($customers[$selectedCustomerId])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta charset="utf-8">
     <title>CISC3003 Suggested Exercise 10 - DC227171 SEKI TOMOKI</title>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto" type="text/css">
