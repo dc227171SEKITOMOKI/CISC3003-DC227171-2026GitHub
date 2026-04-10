@@ -13,7 +13,7 @@ if ($selectedCustomerId && isset($customers[$selectedCustomerId])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CISC3003 Suggested Exercise 10</title>
+    <title>CISC3003 Suggested Exercise 10 - DC227171 SEKI TOMOKI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -27,7 +27,7 @@ if ($selectedCustomerId && isset($customers[$selectedCustomerId])) {
     
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/material-design-lite/1.1.3/material.min.js"></script>
-    <script src="js/jquery.sparkline.2.1.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
     
     <script>
         $(function() {
@@ -141,7 +141,7 @@ if ($selectedCustomerId && isset($customers[$selectedCustomerId])) {
                                     </tr>
                                 <?php endif; ?>
                             <?php endif; ?>
-                            </tbody>
+                          </tbody>
                         </table>
 
                     </div>    
@@ -149,6 +149,11 @@ if ($selectedCustomerId && isset($customers[$selectedCustomerId])) {
                </div>   
             </div>  
         </section>
+
+        <footer class="site-footer">
+            CISC3003 Web Programming: DC227171 SEKI TOMOKI 2026
+        </footer>
+        
     </main>    
 </div>    
           
