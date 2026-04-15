@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $password = mysqli_real_escape_string($conn , $_POST['password']);
     
     //check if email is already in database
-    $checkEmail = "SElECT * FROM uers WHERE email ='$email'";
+    $checkEmail = "SELECT * FROM users WHERE email ='$email'";
     $result = $conn->query($checkEmail);
     
     if($result->num_rows > 0){

@@ -20,7 +20,7 @@
                 </div>
                 <span>Use your email to sign up</span>
                 <input type="text" name = "fullname" placeholder="Enter your name" required>
-                <input type="email" name = "email" placeholder="Email" required>
+                <input type="email" name = "email" placeholder="Enter your Email" required>
                 <input type="password" name = "password" placeholder="Create Password" required>
                 <button type="submit">Register</button>
             </form>
