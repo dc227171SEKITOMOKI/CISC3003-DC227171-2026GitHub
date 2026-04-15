@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connect.php";
 
 //LOGIN USERS HERE
@@ -8,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $password = mysqli_real_escape_string($conn , $_POST['password']);
     
     //FETCH DATABASE
-    $sql = "SELECT * FROM users WHERE email = ''$email'";
+    $sql = "SELECT * FROM users WHERE email = '$email'";
     $result = $conn->query($sql);
     
     if($result->num_rows > 0) {
@@ -21,9 +22,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $_SESSION['user'] = $user['email'];
             //redirect to dashboard..
             header("Location: dashboard.php");
+            exit();
         } else {
-        //email doesnt exist
-        echo "wrong password!!";
+            //email doesnt exist
+            echo "wrong password!!";
         }
     }else {
         echo "NO USER WITH THAT EMAIL";
