@@ -1,0 +1,569 @@
+body {
+  margin: 0;
+  background-color: #252021;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100vmin;
+  height: 100vmin;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* 1. 统一定义两个按钮的基础样式和垂直位置 */
+.canvas-container a {
+  display: none;
+  position: absolute;
+  top: auto !important;     /* 强制取消原本的顶部定位 */
+  bottom: 8%;               /* 挪到距离屏幕底部 8% 的位置（可自行微调） */
+  z-index: 105;
+  
+  /* 增加一点按钮的美化效果 */
+  background-color: #019897; 
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 900;
+  transition: background-color 0.2s;
+}
+
+.canvas-container a:hover {
+  background-color: #f38073; /* 鼠标放上去变珊瑚红色 */
+}
+
+/* 2. 单独控制 Reset 按钮在左边下角 */
+.canvas-container a[onclick="location.reload()"] {
+  left: 25% !important;     /* 距离左边 25% */
+  right: auto !important;
+}
+
+/* 3. 单独控制 Finished 按钮在右边下角 */
+.canvas-container a[onclick="finish()"] {
+  right: 25% !important;    /* 距离右边 25% */
+  left: auto !important;
+}
+
+.canvas-container canvas {
+  height: 100%;
+}
+
+.level-indicator {
+  position: absolute;
+  top: 2.8%;
+  left: 3vw;
+  transform: none;
+  z-index: 5;
+  font-family: 'Coustard', serif;
+  font-size: 20px;
+  color: #f38073;
+  background-color: rgba(37, 32, 33, 0.88);
+  border: 2px solid #019897;
+  padding: 8px 18px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: none;
+}
+
+.score-indicator {
+  position: absolute;
+  top: 8.5%;
+  left: 3vw;
+  transform: translateX(-50%);
+  z-index: 5;
+  font-family: 'Coustard', serif;
+  font-size: 16px;
+  color: #019897;
+  background-color: rgba(37, 32, 33, 0.88);
+  border: 2px solid #f38073;
+  padding: 6px 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: none;
+}
+
+.game--active .level-indicator,
+.game--over .level-indicator,
+.game--win .level-indicator {
+  display: block;
+}
+
+.game--active .score-indicator,
+.game--over .score-indicator,
+.game--win .score-indicator {
+  display: block;
+}
+
+.modal {
+  position: absolute;
+  width: 150px;
+  min-height: 220px;
+  font-size: 14px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/21151/ticket.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #019897;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  font-family: 'Coustard', serif;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 18px 16px 18px;
+  box-sizing: border-box;
+  transition: .2s all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game--select .modal {
+  width: 165px;
+  min-height: 410px;
+  padding: 18px 16px 20px;
+  background-size: 100% 100%;
+}
+
+.game--ranking .modal {
+  width: 460px;
+  min-height: 560px;
+  padding: 24px 26px 26px;
+  background-size: 100% 100%;
+}
+
+body:not(.game--loading):not(.game--active):not(.game--over):not(.game--win):not(.game--select):not(.game--ranking) .modal__main {
+  display: block;
+  padding-top: 10px;
+}
+
+.modal__content {
+  width: 100%;
+}
+
+.modal__main,
+.modal__loading,
+.modal__gameover,
+.modal__win,
+.modal__levels,
+.modal__ranking {
+  display: none;
+}
+
+.modal__title {
+  padding: 0;
+  margin: 0 0 15px 0;;
+  color: #f38073;
+  line-height: 1.05;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.game--ranking .modal__title {
+  font-size: 28px;
+  padding-bottom: 16px;
+}
+
+.modal__text {
+  margin: 1em 0;
+  line-height: 1.45;
+  word-break: break-word;
+  color: #252021;
+  font-size: 14px;
+}
+
+.modal__label {
+  display: block;
+  margin-top: 2px;
+  color: #019897;
+  font-size: 13px;
+}
+
+.modal__controls {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 6px;
+}
+
+.modal__controls--stack {
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.modal__level-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 4px 0 10px;
+}
+
+.btn {
+  font-family: 'Coustard', serif;
+  display: inline-block;
+  line-height: 32px;
+  background-color: #d8d1c6;
+  padding: 0 14px;
+  color: #252021;
+  cursor: pointer;
+  text-transform: none;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+.btn:hover {
+  background-color: #bfb8ad;
+}
+
+.btn--level {
+  width: 100%;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.btn--wide {
+  width: 100%;
+  line-height: 30px;
+  font-size: 13px;
+}
+
+.game--ranking .btn--wide {
+  line-height: 38px;
+  font-size: 15px;
+}
+
+.ranking-panel {
+  background: rgba(1, 152, 151, 0.08);
+  border: 2px solid #019897;
+  padding: 12px 12px 8px;
+  margin: 4px 0 16px;
+  text-transform: none;
+}
+
+.ranking-header,
+.ranking-row {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 1fr;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.ranking-header {
+  color: #f38073;
+  font-size: 16px;
+  padding: 0 6px 8px;
+  border-bottom: 2px solid rgba(1, 152, 151, 0.35);
+  margin-bottom: 6px;
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ranking-row {
+  background: rgba(216, 209, 198, 0.55);
+  color: #252021;
+  font-size: 15px;
+  padding: 8px 6px;
+}
+
+.ranking-row--empty {
+  opacity: 0.7;
+}
+
+.ranking-id {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-level {
+  text-align: center;
+}
+
+.ranking-score {
+  text-align: right;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  width: 100%;
+  margin-top: 8px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background-color: #01aead;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background-color: #01aead;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 6px;
+  background-color: #01aead;
+  border: none;
+  border-radius: 3px;
+  margin: 5px 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #f38073;
+  margin-top: -4px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #f38073;
+}
+
+input[type=range]::-ms-thumb {
+  margin-top: 0;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background-color: #017f7e;
+}
+
+input[type=range]:focus::-moz-range-track {
+  background-color: #017f7e;
+}
+
+.game--loading .modal__loading {
+  display: block;
+}
+
+.game--select .modal__levels {
+  display: block;
+}
+
+.game--ranking .modal__ranking {
+  display: block;
+}
+
+.game--active .canvas-container a {
+  display: block;
+}
+
+.game--active .modal {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(0);
+}
+
+.game--over .modal__gameover {
+  display: block;
+}
+
+.game--win .modal__win {
+  display: block;
+}
+
+.page-container {
+    width: 85vw;
+    max-width: 800px;
+    margin: 120px auto 50px; /* 留出顶部导航栏的空间 */
+    background-color: rgba(37, 32, 33, 0.95);
+    border: 3px solid #019897;
+    padding: 40px 50px;
+    color: #019897;
+    text-align: center;
+    font-family: 'Coustard', serif;
+    box-shadow: 8px 8px 0 rgba(1, 152, 151, 0.2);
+    box-sizing: border-box;
+}
+
+.page-container h2 {
+    color: #f38073;
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 排行榜表格样式 */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #d8d1c6;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.leaderboard-table th {
+    color: #f38073;
+    border-bottom: 3px solid #019897;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.leaderboard-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(216, 209, 198, 0.15);
+    text-align: center;
+}
+
+.leaderboard-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: rgba(1, 152, 151, 0.15);
+}
+
+.leaderboard-table tbody tr td:nth-child(1) {
+    color: #fdb601; /* 排名用明黄色突出 */
+    font-weight: 900;
+}
+
+/* 联系表单样式 */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    color: #f38073;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #019897;
+    color: #d8d1c6;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #f38073;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-form .btn {
+    align-self: center;
+    padding: 12px 40px;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+/* =========================================
+   搜索页面 (Search Data Center)
+   ========================================= */
+
+.search-console {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+/* 搜索下拉框和输入框的共用样式 */
+.search-input {
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #019897;
+    color: #d8d1c6;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #f38073;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+select.search-input {
+    width: 30%;
+    cursor: pointer;
+    color: #f38073;
+    font-weight: 900;
+}
+
+input.search-input {
+    width: 70%;
+}
+
+/* 搜索结果的展示面板 */
+.search-results-box {
+    background: rgba(1, 152, 151, 0.08);
+    border: 2px solid #019897;
+    padding: 20px;
+    min-height: 150px;
+    text-align: left;
+}
+
+.search-result-item {
+    background: rgba(216, 209, 198, 0.1);
+    border-left: 4px solid #f38073;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    color: #d8d1c6;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(216, 209, 198, 0.25);
+}
+
+.search-result-item strong {
+    color: #fdb601;
+    letter-spacing: 1px;
+}

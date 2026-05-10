@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Signup Successful</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../web_template/style.css">
+    <style>
+        .login-header {
+            margin-top: 40px; /* 让上方内容往下移动 */
+        }
+        .success-box {
+            text-align: center;
+            padding: 10px 0 20px 0;
+        }
+        .success-icon {
+            font-size: 70px; /* 把表情调小一点点适应方框 */
+            background-color: #ffffff; /* <-- 在这里修改底部的颜色！ */
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+            border: 2px solid #ffffff; /* 边框颜色 */
+        }
+        .success-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        .success-subtext {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo">
+                    <div class="logo-square"></div>
+                </div>
+                <h2>Almost done!<br>Check Your Mail</h2>
+            </div>
+            
+            <div class="success-box">
+                <div class="success-icon">✉️</div>
+                <div class="success-text">Signup successful.</div>
+                <div class="success-subtext">Please check your email to activate your account.</div>
+                <a href="login.php" class="login-btn" style="text-decoration: none; display: inline-block;">
+                    <span class="btn-text">RETURN TO LOGIN</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
